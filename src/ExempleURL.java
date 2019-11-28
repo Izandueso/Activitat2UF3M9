@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.*;
 import java.util.Scanner;
 
@@ -5,7 +9,7 @@ public class ExempleURL {
 	
 	public static void main (String[] args) {
 		//Creem el objecte URL
-		URL url;
+		URL url = null;
 		Scanner teclado = new Scanner(System.in);
 		
 		try {
@@ -17,7 +21,7 @@ public class ExempleURL {
 			String protocol = teclado.nextLine();
 			
 			//Demanem la URL
-			System.out.println("Introdueix URL: (Exemple: doc.oracle.com)"); 
+			System.out.println("Introdueix URL: (Exemple: doc.oracle.com, www.insbaixcamp.org)"); 
 			String link = teclado.nextLine();
 			
 			//Demanem el port
@@ -53,7 +57,19 @@ public class ExempleURL {
 			Visualitzar (url);
 			
 		} catch (MalformedURLException e) { System.out.println(e); }
-		
+		BufferedReader in;
+		try {
+			
+			InputStream inputStream = url.openStream();
+			in = new BufferedReader(new InputStreamReader(inputStream));
+			
+			String inputLine;
+			
+			while ((inputLine = in.readLine()) != null)
+				System.out.println(inputLine);
+			in.close();
+			
+		} catch (IOException e) {e.printStackTrace(); }
 	}
 	
 	//Metode per visualitzar les URL mitjançant el objecte URL i el metode visualitzar
