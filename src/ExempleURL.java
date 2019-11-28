@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class ExempleURL {
 	
 	public static void main (String[] args) {
+		//Creem el objecte URL
 		URL url;
 		Scanner teclado = new Scanner(System.in);
 		
@@ -16,7 +17,7 @@ public class ExempleURL {
 			String protocol = teclado.nextLine();
 			
 			//Demanem la URL
-			System.out.println("Introdueix URL: (Exemple: doc.oracle.com)");
+			System.out.println("Introdueix URL: (Exemple: doc.oracle.com)"); 
 			String link = teclado.nextLine();
 			
 			//Demanem el port
