@@ -35,31 +35,12 @@ public class ExempleURL {
 			url = new URL(protocol, link, port, directori);
 			Visualitzar (url);
 			
-			System.out.println("Constructor simple per a un URL: ");
-			url = new URL("http://docs.oracle.com/");
-			Visualitzar (url);
-			
-			System.out.println("Altra constructor simple per a un URL: ");
-			url = new URL("http://localhost/moodle/");
-			Visualitzar (url);
-			
-			System.out.println("Constructor per a protocol + URL + directori: ");
-			url = new URL("http", "doc.oracle.com", "/javase/7");
-			Visualitzar (url);
-			
-			System.out.println("Constructor per a protocol + URL + port + directori: ");
-			url = new URL("http", "doc.oracle.com", 80, "/javase/7");
-			Visualitzar (url);
-			
-			System.out.println("Constructor per a un objecte URL i un directori: ");
-			URL urlBase = new URL("http://docs.oracle.com/");
-			url = new URL(urlBase, "/javase/7/docs/api/java/net/URL.html");
-			Visualitzar (url);
 			
 		} catch (MalformedURLException e) { System.out.println(e); }
 		BufferedReader in;
 		try {
 			
+			//en aquest try anirem mostran el codi font de la pagina WEB
 			InputStream inputStream = url.openStream();
 			in = new BufferedReader(new InputStreamReader(inputStream));
 			
